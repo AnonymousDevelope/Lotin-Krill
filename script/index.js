@@ -59,6 +59,7 @@ const ForSwap = () => {
       </div>
       <Route exact path="/" component={Introduct} />
       <Route path="/About_Program" component={About_Program} />
+      <Footer />
     </BrowseRouting>
   );
 };
@@ -72,14 +73,35 @@ const About_Program = () => (
       This is the Program helps to us
     </h1>
     <div className="container">
-      <div className="modal-title title "><span className="border-bottom">About Program</span></div>
-        <div className="translate-language-uzbek">
-          Bu dastur asosan krilchadayaxshi yozaolmaydiganlarga yordam beradigan dastur hisoblanadi.
-          Bu sitening controller qismining Introduct qismida joylashgan hisoblanadi.
-          Buning bitta tomoni bor bu dasturning krildan lotinga tarjima qilish funksiyasi hali yaratilgani yo'q.
-        </div>
+      <div className="modal-title title ">
+        <span className="border-bottom">About Program</span>
+      </div>
+      <div className="translate-language-uzbek">
+        Bu dastur asosan krilchadayaxshi yozaolmaydiganlarga yordam beradigan
+        dastur hisoblanadi. Bu sitening controller qismining Introduct qismida
+        joylashgan hisoblanadi. Buning bitta tomoni bor bu dasturning krildan
+        lotinga tarjima qilish funksiyasi hali yaratilgani yo'q.
+      </div>
     </div>
   </div>
+);
+const Footer = () => (
+  <footer
+    style={{
+      position: "absolute",
+      bottom: 0,
+      textAlign:"center",
+    }}
+    className="w-100 text-center"
+  >
+    <h1
+      data-tag="message"
+      className="m-auto fs-1 text-primary"
+    >
+      Site ishlab chiquchisi Anonymous Developer
+      <p>(2023 17 yanvar)</p>
+    </h1>
+  </footer>
 );
 const Introduct = () => (
   <div className="container">
@@ -129,8 +151,8 @@ const Introduct = () => (
   </div>
 );
 //this an informations finish
-var Writer= ()=> {
-  text = $(".uzb-text").val(); 
+var Writer = () => {
+  text = $(".uzb-text").val();
   copytext = text;
   newText = "";
   elements = [];
@@ -389,7 +411,7 @@ var Writer= ()=> {
     newText += elements[i];
   }
   $(".russian-text").val(newText);
-}
+};
 $(document).ready(function () {
   setTimeout(() => {
     var len = $(".title").html().length;
@@ -399,9 +421,9 @@ $(document).ready(function () {
       $(".uzb-text").val("");
       $(".russian-text").val("");
     });
-   
-    $(".uzb-text").on("input",Writer);
-    $(".swap").on("click",Writer);
+
+    $(".uzb-text").on("input", Writer);
+    $(".swap").on("click", Writer);
 
     //for style textarea
     $(".russian-text").addClass("disable");
